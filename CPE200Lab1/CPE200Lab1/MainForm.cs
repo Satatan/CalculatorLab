@@ -113,7 +113,7 @@ namespace CPE200Lab1
                 return;
             }
             operate = ((Button)sender).Text;
-            if(!isAfterEqual)
+            if( !isAfterEqual)
             {
                 if (lblDisplay.Text is "Error")
                 {
@@ -130,6 +130,7 @@ namespace CPE200Lab1
                     lblDisplay.Text = result;
                 }
                 isAfterEqual = true;
+            
             }
             switch (operate)
             {
