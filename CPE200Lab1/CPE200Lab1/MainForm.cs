@@ -114,6 +114,7 @@ namespace CPE200Lab1
             }
             isAllowBack = false;
             isfirstOperater = true;
+            containsDot = false;
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
@@ -243,7 +244,7 @@ namespace CPE200Lab1
             remainLength = 8 - parts[0].Length - 1;
             // trim the fractional part gracefully. =
             lblDisplay.Text =  result.ToString("N" + remainLength);
-
+            containsDot = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -261,6 +262,7 @@ namespace CPE200Lab1
             remainLength = 8 - parts[0].Length - 1;
             // trim the fractional part gracefully. =
             lblDisplay.Text = result.ToString("N" + remainLength);
+            containsDot = false;
         }
     }
 }
