@@ -20,6 +20,7 @@ namespace CPE200Lab1
         private string firstOperand;
         private string operate;
         private CalculatorEngine engine;
+        private string memory = "0";
 
         private void resetAll()
         {
@@ -228,7 +229,7 @@ namespace CPE200Lab1
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void backSection_Click(object sender, EventArgs e)
         {
             
             double result;
@@ -247,7 +248,7 @@ namespace CPE200Lab1
             containsDot = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void sqr_Click(object sender, EventArgs e)
         {
             double result;
             string[] parts;
@@ -263,6 +264,32 @@ namespace CPE200Lab1
             // trim the fractional part gracefully. =
             lblDisplay.Text = result.ToString("N" + remainLength);
             containsDot = false;
+        }
+
+        private void memory_Click(object sender, EventArgs e)
+        {
+            operate = ((Button)sender).Text;
+
+            switch (operate)
+            {
+                case "MS":
+                    memory = lblDisplay.Text;
+                    break;
+                case "MR":
+                    lblDisplay.Text = memory;
+                    break;
+                case "MC":
+                    memory = "0";
+                    break;
+                case "M+":
+                    memory = (Convert.ToDouble(memory) + Convert.ToDouble(lblDisplay.Text)).ToString();
+                    break;
+                case "M-":
+                    memory = (Convert.ToDouble(memory) - Convert.ToDouble(lblDisplay.Text)).ToString();
+                    break;
+
+            }
+            
         }
     }
 }
