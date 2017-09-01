@@ -127,7 +127,8 @@ namespace CPE200Lab1
                     isAfterOperater = true;
                     break;
                 case "%":
-                    // your code here
+                    firstOperand = lblDisplay.Text;
+                    isAfterOperater = true;
                     break;
             }
             isAllowBack = false;
@@ -150,6 +151,7 @@ namespace CPE200Lab1
                 lblDisplay.Text = result;
             }
             isAfterEqual = true;
+            
         }
 
         private void btnDot_Click(object sender, EventArgs e)
