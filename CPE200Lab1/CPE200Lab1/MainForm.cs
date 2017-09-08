@@ -20,6 +20,7 @@ namespace CPE200Lab1
         private string operate;
         private double memory;
         private CalculatorEngine engine;
+        private bool isT;
 
         private void resetAll()
         {
@@ -29,6 +30,7 @@ namespace CPE200Lab1
             isAfterOperater = false;
             isAfterEqual = false;
             firstOperand = null;
+            isT = true;
         }
 
       
@@ -67,6 +69,7 @@ namespace CPE200Lab1
             }
             lblDisplay.Text += digit;
             isAfterOperater = false;
+            
         }
 
         private void btnUnaryOperator_Click(object sender, EventArgs e)
@@ -103,7 +106,7 @@ namespace CPE200Lab1
             {
                 return;
             }
-            if(firstOperand != null)
+            if(firstOperand == null)
             {
                 string secondOperand = lblDisplay.Text;
                 string result = engine.calculate(operate, firstOperand, secondOperand);
@@ -132,6 +135,7 @@ namespace CPE200Lab1
                     break;
             }
             isAllowBack = false;
+            
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
@@ -151,8 +155,9 @@ namespace CPE200Lab1
                 lblDisplay.Text = result;
             }
             isAfterEqual = true;
+            isT = true;
 
-            
+
 
         }
 
