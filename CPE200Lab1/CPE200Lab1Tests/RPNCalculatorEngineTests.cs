@@ -11,7 +11,7 @@ namespace CPE200Lab1.Tests
     [TestClass()]
     public class RPNCalculatorEngineTests
     {
-        RPNCalculatorEngine engine;
+        public RPNCalculatorEngine engine;
 
         [TestInitialize()]
         public void Initialize()
