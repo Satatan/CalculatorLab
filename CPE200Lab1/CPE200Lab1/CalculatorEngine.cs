@@ -16,6 +16,7 @@ namespace CPE200Lab1
 
         protected bool isOperator(string str)
         {
+            if (str.Length > 1) return false;
             switch(str) {
                 case "+":
                 case "-":
