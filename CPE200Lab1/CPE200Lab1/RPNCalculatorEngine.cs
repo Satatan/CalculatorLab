@@ -11,7 +11,7 @@ namespace CPE200Lab1
         public new string Process(string str)
         {
             if (str == null || str == "") return "E";
-            if(str[0] == '+')
+            if (str[0] == '+')
             {
                 return "E";
             }
@@ -33,12 +33,12 @@ namespace CPE200Lab1
                 }
                 else if (token != "") return "E";
 
-                if (real < 1 )
+                if (real < 1)
                 {
                     return "E";
                 }
             }
-            if(real != 1)
+            if (real != 1)
             {
                 return "E";
             }
@@ -63,7 +63,7 @@ namespace CPE200Lab1
                     }
                     rpnStack.Push(result);
                 }
-                 
+
             }
             //FIXME, what if there is more than one, or zero, items in the stack?
             result = rpnStack.Pop();
